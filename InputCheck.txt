@@ -1,0 +1,23 @@
+public bool InputsCheck( ref  TextBox type,  TextBox diametr, TextBox length, TextBox cutlength, TextBox cornerradius, TextBox quantity,DatePicker date)
+		{
+			bool status = false;
+			if (type.Text == "" ||  length.Text =="" || diametr.Text =="" || cutlength.Text =="" || cornerradius.Text ==""||  quantity.Text=="")  
+				{	MessageBox.Show("One or more field is empty"); 
+					type.Focus(); //	ClearInput();
+				}
+			else // Diametr > corner radius *2
+			{ int i = Int32.Parse(diametr.Text); float  j = float.Parse(cornerradius.Text);
+				if (i / 2 >= j)
+				{
+					DateCheck();  // ClearInput(); 
+				}
+				else { MessageBox.Show("Corner radius big more then half diametr"); cornerradius.Focus(); cornerradius.Text = ""; status = false; }
+			}
+			void DateCheck()
+			{
+				// if Date Choised from DatePicker
+				if (date.SelectedDate != null) status = true;
+				else { status = false; MessageBox.Show("Date not choised"); }
+			}
+			return status;
+		}
