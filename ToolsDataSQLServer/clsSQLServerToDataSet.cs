@@ -15,8 +15,8 @@ namespace ToolsDataSQLServer
 		    private static string ConnectionString ="Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=MillToolsDB;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";  
 			private static SqlDataReader reader = null;   
 			internal static SqlConnection conn =   new SqlConnection(ConnectionString);   
-			private static SqlCommand cmd = null;  
-			private static string  sql = null;
+			internal static SqlCommand cmd = null;  
+			internal static string  sql = null;
 			internal static DataSet  dataSet = new DataSet();
 			internal static SqlDataAdapter sqldataAdapter = new SqlDataAdapter("select * from  Tools_Table", conn);
 #region SQL Command     
@@ -129,7 +129,6 @@ namespace ToolsDataSQLServer
 		    } // AddCollectionItemsToSqlDataBase
 			internal static void ConnectDataBase ()
 			{
-				//ConnectionString = @"Data Source=WIN-50GP30FGO75;Initial Catalog=Demodb;User ID=sa;Password=demol23";
 				if (conn.State == ConnectionState.Open)  conn.Close();  
 				conn.Open();
 				MessageBox.Show("Connection Open  !");

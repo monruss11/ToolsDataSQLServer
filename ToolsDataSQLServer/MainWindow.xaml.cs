@@ -100,7 +100,12 @@ namespace ToolsDataSQLServer
 				validtion.ClearInput(ref txt_Type, txt_Diametr, txt_Length, txt_CutLength, txt_CornerRadius, txt_Quantity);
 			}
 		}
-#endregion Buttons
+		private void OpenSearch_Click(object sender, RoutedEventArgs e)
+		{
+			QueryFromSQLDataBase querywindow = new QueryFromSQLDataBase(); querywindow.ShowDialog();
+		}
+		#endregion Buttons
+
 		
 	}//MainWindow
 } //namespace

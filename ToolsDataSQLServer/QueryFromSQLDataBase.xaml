@@ -1,0 +1,94 @@
+﻿<Window x:Class="ToolsDataSQLServer.QueryFromSQLDataBase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToolsDataSQLServer"
+        mc:Ignorable="d"
+        Title="Query From DataBase" Height="430" Width="500"
+         Icon="Resources\lime32.ico"
+        MaxHeight="430" MaxWidth="500">
+    <Window.Resources>
+        <Style x:Key="LabelStyle" TargetType="TextBlock" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="Width" Value="90" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="3" />
+            <Setter Property="VerticalAlignment"  Value="Stretch" />
+            <Setter Property="HorizontalAlignment"  Value="Right" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="90" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="FontSize" Value="12"  />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="3"/>
+        </Style>
+        <Style x:Key="MenuStyle" TargetType="MenuItem" >
+            <Setter Property="Height" Value="auto" />
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="FontSize" Value="12"  />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderThickness" Value="0.5" />
+            <Setter Property="BorderBrush" Value="Green" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Background" Value="Wheat" />
+        </Style>
+    </Window.Resources>
+    <WrapPanel>
+        <Border   Height="25" Width="75" Margin="7,7,1,1">
+            <Menu Background="Azure"   >
+                <MenuItem Header="Search" Style="{StaticResource MenuStyle }"  Click="Search_MenuItem_Click" />
+                <Separator Width="10"></Separator>
+            </Menu>
+        </Border>
+        <Border   Height="25" Width="75" Margin="1,7,1,1" Background="Azure" />
+        <Border   Height="25" Width="75" Margin="1,7,1,1" Background="Azure" />
+        <Border   Height="25" Width="75" Margin="1,7,1,1" Background="Azure" />
+        <Border   Height="25" Width="75" Margin="1,7,1,1" Background="Azure" />
+        <Border   Height="25" Width="75" Margin="1,7,1,1" Background="Azure" />
+        <!--#region TextBlocks-->
+        <TextBlock Name="lbl_Diametr"  Width="100" Height="60">    
+            <StackPanel>
+                <TextBlock Style="{StaticResource LabelStyle }"> Diametr</TextBlock>
+                <TextBox Name="txt_DiametrQuery" Style="{StaticResource TextBoxStyle}"  PreviewTextInput="Txt_DiametrQuery_PreviewTextInput" ></TextBox>
+             </StackPanel>
+        </TextBlock>
+        <TextBlock Name="lbl_Length"  Width="100" Height="60">    
+            <StackPanel>
+                <TextBlock Style="{StaticResource LabelStyle }"> Length</TextBlock>
+                <TextBox Name="txt_LengthQuery" Style="{StaticResource TextBoxStyle}" PreviewTextInput="Txt_DiametrQuery_PreviewTextInput" ></TextBox>
+             </StackPanel>
+        </TextBlock>
+        <TextBlock Name="lbl_Condition"  Width="100" Height="60">    
+            <StackPanel>
+                <TextBlock Style="{StaticResource LabelStyle }"> Condition</TextBlock>
+                 <ComboBox Name="cmb_Condition" FontStretch="Normal" FontWeight="SemiBold" FontSize="14" Height="22" Width="auto" Margin="2" >  
+                    <ComboBoxItem>&gt;</ComboBoxItem>  
+                     <ComboBoxItem>&lt; </ComboBoxItem> 
+                     <ComboBoxItem>=</ComboBoxItem> 
+                    <ComboBoxItem>&gt;=</ComboBoxItem> 
+                    <ComboBoxItem>&lt;= </ComboBoxItem>
+                 </ComboBox>
+             </StackPanel>
+        </TextBlock>
+          
+       
+        <!--#endregion TextBlocks-->
+        <DataGrid Name="dgQuerySearchResult" Width="450" Height="270" Margin="15" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  >
+            
+        </DataGrid>
+        
+        
+
+
+    </WrapPanel>
+</Window>

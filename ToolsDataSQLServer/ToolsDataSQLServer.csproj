@@ -57,6 +57,9 @@
     </ApplicationDefinition>
     <Compile Include="clsInputValidtion.cs" />
     <Compile Include="clsSQLServerToDataSet.cs" />
+    <Compile Include="QueryFromSQLDataBase.xaml.cs">
+      <DependentUpon>QueryFromSQLDataBase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToolData.cs" />
     <Compile Include="WriteReadXML.cs" />
     <Page Include="MainWindow.xaml">
@@ -71,6 +74,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="QueryFromSQLDataBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -97,6 +104,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\lime32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
